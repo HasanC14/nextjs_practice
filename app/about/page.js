@@ -1,5 +1,5 @@
 const page = () => {
-  throw new Error("bisal error");
+  // throw new Error("bisal error");
   return <main>hello about</main>;
 };
 export default page;
