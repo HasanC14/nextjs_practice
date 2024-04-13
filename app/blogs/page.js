@@ -1,6 +1,9 @@
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import getAll from "../lib/getAll";
+import getAllPost from "../lib/getAllPost";
+import Posts from "../components/Posts";
+import Loading from "../components/Loading";
 
 export const metadata = {
   title: "Blog Section",
@@ -8,6 +11,7 @@ export const metadata = {
 };
 const blogs = async () => {
   const blogs = await getAll();
+  const posts = getAllPost();
 
   return (
     <ul className="">
@@ -16,6 +20,10 @@ const blogs = async () => {
           <Link href={`/blogs/${blog.id}`}>{blog.id}</Link>
         </li>
       ))}
+      <Suspense fallback={<Loading />}>
+        <div>Other</div>
+        <Posts promise={posts}></Posts>
+      </Suspense>
     </ul>
   );
 };
