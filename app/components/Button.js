@@ -1,16 +1,13 @@
 "use client";
 
+import { FaFacebook } from "react-icons/fa";
+import Magnet from "./Magnet";
 const Button = () => {
-  const btnHandle = () => {
-    console.log("hello there");
-  };
-
   return (
-    <div
-      className="btn cursor-pointer bg-green-500 px-4 py-2 rounded-md w-32 text-center my-10"
-      onClick={btnHandle}
-    >
-      Click
+    <div>
+      <Magnet>
+        <FaFacebook className="text-4xl m-5" />
+      </Magnet>
     </div>
   );
 };

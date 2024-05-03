@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} grid place-items-center`}>
-        <nav>
+        {/* <nav>
           <ul className="flex space-x-4">
             <li>
               <Link href={"/"}>Home</Link>
@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
               <Link href={"/posts"}>Posts</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         {children}
       </body>
     </html>
